@@ -399,6 +399,9 @@ label.feature <- function(x){
   labs <- SHAPforxgboost::labels_within_package
   # but if you supply your own `new_labels`, it will print your feature names
   # must provide a list.
+
+  if(!exists("new_labels")) new_labels <- NULL
+
   if (!is.null(new_labels)) {
     if(!is.list(new_labels)) {
       message("new_labels should be a list, for example,`list(var0 = 'VariableA')`.\n")
